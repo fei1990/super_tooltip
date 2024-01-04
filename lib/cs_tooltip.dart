@@ -1,4 +1,4 @@
-library super_tooltip;
+library cs_tooltip;
 
 export 'src/enums.dart';
 export 'src/super_tooltip.dart';

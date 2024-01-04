@@ -1,5 +1,5 @@
+import 'package:cs_tooltip/cs_tooltip.dart';
 import 'package:flutter/material.dart';
-import 'package:super_tooltip/super_tooltip.dart';
 
 void main() => runApp(const MainApp());
 
@@ -62,11 +62,7 @@ class _TargetWidgetState extends State<TargetWidget> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: _willPopCallback,
-      child: GestureDetector(
-        onTap: () async {
-          await _controller.showTooltip();
-        },
-        child: SuperTooltip(
+      child: SuperTooltip(
           showBarrier: true,
           controller: _controller,
           popupDirection: TooltipDirection.down,
@@ -108,7 +104,6 @@ class _TargetWidgetState extends State<TargetWidget> {
             ),
           ),
         ),
-      ),
     );
   }
 

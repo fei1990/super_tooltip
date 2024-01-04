@@ -1,0 +1,11 @@
+{
+    "flutter.version": "3.16.0",
+    "flutter.baseDir": "~/.flutter_sdks",
+    "flutter.url": "https://gitee.com/mirrors/Flutter.git",
+    "cmds": {
+        "parentDir": [
+            "cd ..",
+            "pwd"
+        ]
+    }
+}

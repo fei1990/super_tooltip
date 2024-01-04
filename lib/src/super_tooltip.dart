@@ -1,7 +1,7 @@
 import 'dart:ui';
 
+import 'package:cs_tooltip/src/utils.dart';
 import 'package:flutter/material.dart';
-import 'package:super_tooltip/src/utils.dart';
 
 import 'bubble_shape.dart';
 import 'enums.dart';
@@ -49,6 +49,7 @@ class SuperTooltip extends StatefulWidget {
   final EdgeInsetsGeometry overlayDimensions;
   final EdgeInsetsGeometry bubbleDimensions;
   final bool hideTooltipOnTap;
+  final bool showOnClick;   //控制点击本身弹出tooltip控件
 
   //filter
   final bool showDropBoxFilter;
@@ -87,7 +88,7 @@ class SuperTooltip extends StatefulWidget {
     // need just offset, since it's 4 way directional
     // this.verticalOffset = 24.0,
     this.backgroundColor,
-
+    this.showOnClick = false,
     //
     //
     //
@@ -197,7 +198,7 @@ class _SuperTooltipState extends State<SuperTooltip>
     return CompositedTransformTarget(
       link: _layerLink,
       child: GestureDetector(
-        onTap: _superTooltipController!.showTooltip,
+        onTap: widget.showOnClick ? _superTooltipController!.showTooltip : null,
         onLongPress: widget.onLongPress,
         child: widget.child,
       ),
