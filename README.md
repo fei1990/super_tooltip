@@ -28,7 +28,7 @@ Alternatively, your editor might support flutter pub get. Check the docs for you
 Now in your Dart code, you can use:
 
 ```
-import 'package:super_tooltip/super_tooltip.dart';
+import 'package:cs_tooltip/cs_tooltip.dart';
 ```
 # Getting Started 
 
