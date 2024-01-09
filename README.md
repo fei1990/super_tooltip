@@ -14,13 +14,13 @@ Run this command:
 
 With Flutter:
 ```
- flutter pub add super_tooltip
+ flutter pub add cs_tooltip
 ```
 This will add a line like this to your package's pubspec.yaml (and run an implicit flutter pub get):
 
 ```
 dependencies:
-  super_tooltip: latest
+  cs_tooltip: latest
 ```
 
 Alternatively, your editor might support flutter pub get. Check the docs for your editor to learn more.

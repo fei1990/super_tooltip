@@ -49,7 +49,7 @@ class SuperTooltip extends StatefulWidget {
   final EdgeInsetsGeometry overlayDimensions;
   final EdgeInsetsGeometry bubbleDimensions;
   final bool hideTooltipOnTap;
-  final bool showOnClick;   //控制点击本身弹出tooltip控件
+  final bool showOnClick; //控制点击本身弹出tooltip控件
 
   //filter
   final bool showDropBoxFilter;
@@ -88,7 +88,7 @@ class SuperTooltip extends StatefulWidget {
     // need just offset, since it's 4 way directional
     // this.verticalOffset = 24.0,
     this.backgroundColor,
-    this.showOnClick = false,
+    this.showOnClick = true,
     //
     //
     //
@@ -197,11 +197,13 @@ class _SuperTooltipState extends State<SuperTooltip>
 
     return CompositedTransformTarget(
       link: _layerLink,
-      child: GestureDetector(
-        onTap: widget.showOnClick ? _superTooltipController!.showTooltip : null,
-        onLongPress: widget.onLongPress,
-        child: widget.child,
-      ),
+      child: widget.showOnClick
+          ? GestureDetector(
+              onTap: _superTooltipController!.showTooltip,
+              onLongPress: widget.onLongPress,
+              child: widget.child,
+            )
+          : widget.child,
     );
   }
 
